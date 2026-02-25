@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+
+    <!-- Custom TextInputLayout Style -->
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- Толщина обводки -->
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+
+        <!-- ЦВЕТ ОБВОДКИ: нормальный, фокус, ошибка -->
+        <item name="boxStrokeColor">@color/box_stroke_selector</item>
+
+
+        <!-- Цвет подсказки -->
+        <item name="hintTextColor">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+
+        <!-- Скругление -->
+        <item name="boxCornerRadiusTopStart">@dimen/corner_radius_xlarge</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_radius_xlarge</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_radius_xlarge</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_radius_xlarge</item>
+
+        <!-- Тёмный фон внутри поля -->
+        <item name="boxBackgroundColor">@color/card_background</item>
+        <item name="boxBackgroundMode">outline</item>
+    </style>
+
+    <!-- НОВЫЙ СТИЛЬ ДЛЯ ОБЕРТКИ OTP -->
+
+    <style name="InvisibleError" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <!-- СТИЛЬ ДЛЯ САМОГО ПОЛЯ ВВОДА OTP (бывший OtpStyle) -->
+
+
+    <!-- Password Toggle Style -->
+
+    <style name="SwitchTextStyle" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#D9FFFFFF</item>
+    </style>
+
+</resources>

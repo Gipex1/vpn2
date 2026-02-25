@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    tools:context=".MainActivity">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:layout_marginTop="@dimen/spacing_xlarge"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_logo_description"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Вместо MaterialCardView с двумя вложенными карточками -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_login_type_switcher"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_height"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="@dimen/corner_radius_large"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_xsmall">
+
+            <!-- Email -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_email_selector"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/spacing_xsmall"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="@dimen/corner_radius_medium"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/tv_email_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/email"
+                    android:textColor="@color/text_hint" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Phone -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_phone_selector"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/spacing_xsmall"
+                app:cardBackgroundColor="@color/card_selected"
+                app:cardCornerRadius="@dimen/corner_radius_medium"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/tv_phone_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/phone_number"
+                    android:textColor="@color/text_primary" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!-- Остальной код без изменений... -->
+    <!-- Country Selector Container -->
+    <LinearLayout
+        android:id="@+id/ll_country_selector"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/input_height"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:background="@drawable/rounded_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_medium"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_login_type_switcher">
+
+        <TextView
+            android:id="@+id/tv_country_flag"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:gravity="center"
+            android:text="🇷🇺"
+            android:textSize="16sp"
+            android:layout_marginEnd="@dimen/spacing_small" />
+
+        <TextView
+            android:id="@+id/tv_country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country_code_ru"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            android:layout_marginEnd="@dimen/spacing_small" />
+
+        <ImageView
+            android:id="@+id/iv_dropdown_arrow"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/strelc"
+            android:contentDescription="@string/dropdown_arrow_description"
+            app:tint="#646464" />
+
+    </LinearLayout>
+
+    <!-- Phone Number Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_phone_number"
+        style="@style/CustomTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:hint="@string/phone_number_hint"
+        app:layout_constraintBottom_toBottomOf="@id/ll_country_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ll_country_selector"
+        app:layout_constraintTop_toTopOf="@id/ll_country_selector">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Email Input - НОВОЕ -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        style="@style/CustomTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:hint="Email"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_login_type_switcher">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
+        style="@style/CustomTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_medium"
+
+
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:hint="@string/password_hint"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/text_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_country_selector">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Остальные элементы без изменений -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:backgroundTint="@color/button_primary"
+        android:text="@string/login"
+        android:textColor="@color/button_text"
+        android:textSize="@dimen/text_size_xlarge"
+        app:cornerRadius="@dimen/corner_radius_xlarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_password" />
+
+    <!-- Register, Forgot Password, Social Login - без изменений -->
+    <!-- ... остальные элементы как в оригинале ... -->
+
+
+    <!-- Register Link -->
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/register"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintEnd_toStartOf="@id/tv_forgot_password"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/btn_login"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+    <!-- Forgot Password Link -->
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/forgot_password"
+        android:textColor="@color/text_tertiary"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_register"
+        app:layout_constraintEnd_toEndOf="@id/btn_login"
+        app:layout_constraintStart_toEndOf="@id/tv_register" />
+
+    <!-- Quick Login Label -->
+    <TextView
+        android:id="@+id/tv_quick_login_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xlarge"
+        android:text="@string/quick_login"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_register" />
+
+    <!-- Social Login Buttons Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_social_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_quick_login_label">
+
+        <!-- Google Login -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_google_login"
+            android:layout_width="@dimen/social_button_size"
+            android:layout_height="@dimen/social_button_size"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="@dimen/corner_radius_xlarge"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cv_facebook_login"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:id="@+id/iv_google_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/google_login_description"
+                android:src="@drawable/icon11" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Facebook Login -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_facebook_login"
+            android:layout_width="@dimen/social_button_size"
+            android:layout_height="@dimen/social_button_size"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="@dimen/corner_radius_xlarge"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cv_apple_login"
+            app:layout_constraintStart_toEndOf="@id/cv_google_login"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:id="@+id/iv_facebook_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/facebook_login_description"
+                android:src="@drawable/icon22" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Apple Login -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_apple_login"
+            android:layout_width="@dimen/social_button_size"
+            android:layout_height="@dimen/social_button_size"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="@dimen/corner_radius_xlarge"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cv_facebook_login"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:id="@+id/iv_apple_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/apple_login_description"
+                android:src="@drawable/icon33" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

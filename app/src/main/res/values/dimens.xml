@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xsmall">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">20dp</dimen>
+    <dimen name="spacing_large">30dp</dimen>
+    <dimen name="spacing_xlarge">50dp</dimen>
+    
+    <!-- Component Sizes -->
+    <dimen name="logo_size">200dp</dimen>
+    <dimen name="input_height">50dp</dimen>
+    <dimen name="button_height">50dp</dimen>
+    <dimen name="social_button_size">50dp</dimen>
+    
+    <!-- Corner Radius -->
+    <dimen name="corner_radius_small">8dp</dimen>
+    <dimen name="corner_radius_medium">16dp</dimen>
+    <dimen name="corner_radius_large">20dp</dimen>
+    <dimen name="corner_radius_xlarge">999dp</dimen>
+    
+    <!-- Text Sizes -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">15sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+
+
+    <!-- Для экрана ввода кода -->
+    <!-- толщина обводки при валидации -->
+    <!-- запасной вариант -->
+
+    <!-- Dashboard -->
+    <dimen name="server_item_height">72dp</dimen>
+    <dimen name="load_indicator_width">60dp</dimen>
+    <dimen name="load_indicator_height">4dp</dimen>
+    <dimen name="load_indicator_thickness">4dp</dimen>
+
+
+</resources>
+
+
+

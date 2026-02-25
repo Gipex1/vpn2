@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- При ошибке — красный -->
+    <item android:color="@color/error_red" app:state_error="true"/>
+    <!-- В фокусе — зелёный #9AF907 -->
+    <item android:color="#9AF907" android:state_focused="true"/>
+    <item android:color="#9AF907" android:state_hovered="true"/>
+    <!-- Обычное состояние — серый hint -->
+    <item android:color="@color/text_hint"/>
+</selector>

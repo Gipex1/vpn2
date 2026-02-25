@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App Name -->
+    <string name="app_name">AxiomVPN</string>
+
+    <!-- Login Screen -->
+    <string name="email">E-mail</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="phone_number_hint">Номер телефона</string>
+    <string name="password_hint">Введите пароль</string>
+    <string name="login">Войти</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="forgot_password">Я не помню своего пароля</string>
+    <string name="quick_login">Быстрый вход</string>
+
+    <!-- Country Names -->
+    <string name="country_russia">Россия</string>
+    <string name="country_usa">США</string>
+    <string name="country_uk">Великобритания</string>
+    <string name="country_germany">Германия</string>
+    <string name="country_france">Франция</string>
+    <string name="country_ukraine">Украина</string>
+    <string name="country_kazakhstan">Казахстан</string>
+    <string name="country_belarus">Беларусь</string>
+
+    <!-- Country Codes -->
+    <string name="country_code_ru">+7</string>
+    <string name="country_code_us">+1</string>
+    <string name="country_code_uk">+44</string>
+    <string name="country_code_de">+49</string>
+    <string name="country_code_fr">+33</string>
+    <string name="country_code_ua">+380</string>
+    <string name="country_code_kz">+7</string>
+    <string name="country_code_by">+375</string>
+
+    <!-- Country Display Format -->
+
+    <!-- Content Descriptions -->
+    <string name="app_logo_description">Логотип приложения</string>
+    <string name="dropdown_arrow_description">Стрелка выпадающего списка</string>
+    <string name="google_login_description">Вход через Google</string>
+    <string name="facebook_login_description">Вход через Facebook</string>
+    <string name="apple_login_description">Вход через Apple</string>
+
+    <!-- String Arrays for Countries -->
+    <string-array name="country_names">
+        <item>@string/country_russia</item>
+        <item>@string/country_usa</item>
+        <item>@string/country_uk</item>
+        <item>@string/country_germany</item>
+        <item>@string/country_france</item>
+        <item>@string/country_ukraine</item>
+        <item>@string/country_kazakhstan</item>
+        <item>@string/country_belarus</item>
+    </string-array>
+
+    <string-array name="country_codes">
+        <item>@string/country_code_ru</item>
+        <item>@string/country_code_us</item>
+        <item>@string/country_code_uk</item>
+        <item>@string/country_code_de</item>
+        <item>@string/country_code_fr</item>
+        <item>@string/country_code_ua</item>
+        <item>@string/country_code_kz</item>
+        <item>@string/country_code_by</item>
+    </string-array>
+
+    <!-- Country Flag Emojis -->
+    <string-array name="country_flags">
+        <item>🇷🇺</item>
+        <item>🇺🇸</item>
+        <item>🇬🇧</item>
+        <item>🇩🇪</item>
+        <item>🇫🇷</item>
+        <item>🇺🇦</item>
+        <item>🇰🇿</item>
+        <item>🇧🇾</item>
+    </string-array>
+
+    <!-- 2 EnterCode -->
+    <string name="confirm">Подтвердить</string>
+
+    <!-- Dashboard -->
+
+
+    <string name="think">Спасибо что исользуете наш VPN</string>
+    <string name="discon">Что-то пошло не так</string>
+    <string name="obnovit">Попробуйте обновить</string>
+
+</resources>
